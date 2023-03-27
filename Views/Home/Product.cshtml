@@ -1,0 +1,41 @@
+﻿
+
+<div class="container">
+
+
+    <form action="">
+
+        <div>
+            <div class="container jumbotron  bg-info bg-opacity-25">
+
+                <div class="form-group col-md-6">
+                    <label for="products"><h4>Products :</h4></label>
+                    <select class="form-control" ng-model="pricesearch" >
+                        <option value="">Select Product</option>
+                        <option ng-repeat="a in products" value="{{a.id}}"> {{a.pName}}</option>
+                    </select><br />
+                </div>
+                <br />
+                <div class="form-group col-md-12" ng-if="pricesearch">
+                    <label for="products"><h4>Price :</h4></label>
+
+                    <div ng-repeat="x in products | filter : pricesearch">
+                            <h5>Date : {{x.date}}</h5>
+                            <h5>{{x.pName}} : {{x.price|currency}}</h5></div>
+                    
+                   <br />
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+
+
+    
+
+    
+
+   
+</div>
+
